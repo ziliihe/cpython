@@ -228,9 +228,10 @@ struct _object {
 /* Cast argument to PyObject* type. */
 #define _PyObject_CAST(op) _Py_CAST(PyObject*, (op))
 
+// 用于变长对象的基础数据结构
 typedef struct {
     PyObject ob_base;
-    Py_ssize_t ob_size; /* Number of items in variable part */
+    Py_ssize_t ob_size; /* Number of items in variable part 列表，元组... 元素数量*/
 } PyVarObject;
 
 /* Cast argument to PyVarObject* type. */
